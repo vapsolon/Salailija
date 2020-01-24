@@ -1,4 +1,4 @@
-# Viikkoraportti 1
+# Viikkoraportti 2
 
 ### Tekemiset
 Kakkosviikolla varsinainen produktio alkoi. Ensimmäiset (ja helpoimmat) neljä salausmenetelmää on pääpiirteittäin toteutettu, vaikkakin joitakin ominaisuuksia kuten ääkkösiä joudutaan odottamaan jonkin aikaa jotta muut salaukset saadaan valmiiksi.
