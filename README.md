@@ -17,6 +17,8 @@ Tiralabra 2020 P3 Harjoitustyö
 ### Maven-raportit
 
 ##### Checkstyle
+[Config](https://vapsolon.github.io/Salailija/Salailija/checkstyle.xml)
+
 [Viikko 2](https://vapsolon.github.io/Salailija/docut/maven-raportit/checkstyle/viikko-2/checkstyle.html)
 
 [Viikko 3](https://vapsolon.github.io/Salailija/docut/maven-raportit/checkstyle/viikko-3/checkstyle.html)
