@@ -12,6 +12,7 @@ public class TestTextInterface {
     
     private final ByteArrayOutputStream outs = new ByteArrayOutputStream();
     private final PrintStream outo = System.out;
+    //Lisää debugaamistavaraa, katso alle
     //String[] outContents;
     
     @Before
@@ -22,6 +23,8 @@ public class TestTextInterface {
     @After
     public void restoreStreams() {
         System.setOut(outo);
+        //Nämä täällä debugaamista varten kun testejä lisätään tai uusi koodi
+        //käyttöliittymään rikkoo kaiken
         /*int i = 0;
         for(String s: outContents){
             System.out.println("=== " + i + ": " + s);
@@ -35,7 +38,7 @@ public class TestTextInterface {
         TextInterface t = new TextInterface(s);
         t.run();
         String[] outContent = outs.toString().split("\n");
-        assertTrue(outContent[11].startsWith("Epäkelpo syöte"));
+        assertTrue(outContent[13].startsWith("Epäkelpo syöte"));
     }
     
     @Test
@@ -43,9 +46,9 @@ public class TestTextInterface {
         Scanner s = new Scanner("1\nTesti\n1\nx");
         TextInterface t = new TextInterface(s);
         t.run();
-        String[] outContents = outs.toString().split("\n");
-        assertTrue(outContents[11].startsWith("Ceaserian Shift"));
-        assertTrue(outContents[14].contains("Uftuj"));
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("Ceaserian Shift"));
+        assertTrue(outContent[16].contains("Uftuj"));
     }
     
     @Test
@@ -53,9 +56,9 @@ public class TestTextInterface {
         Scanner s = new Scanner("2\nTesti\nx");
         TextInterface t = new TextInterface(s);
         t.run();
-        String[] outContents = outs.toString().split("\n");
-        assertTrue(outContents[11].startsWith("ROT13"));
-        assertTrue(outContents[13].contains("Grfgv"));
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("ROT13"));
+        assertTrue(outContent[15].contains("Grfgv"));
     }
     
     @Test
@@ -63,9 +66,9 @@ public class TestTextInterface {
         Scanner s = new Scanner("3\nTesti\nx");
         TextInterface t = new TextInterface(s);
         t.run();
-        String[] outContents = outs.toString().split("\n");
-        assertTrue(outContents[11].startsWith("Morse"));
-        assertTrue(outContents[13].contains("-....-.."));
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("Morse"));
+        assertTrue(outContent[15].contains("-....-.."));
     }
     
     @Test
@@ -73,9 +76,29 @@ public class TestTextInterface {
         Scanner s = new Scanner("4\nTesti\nx");
         TextInterface t = new TextInterface(s);
         t.run();
-        String[] outContents = outs.toString().split("\n");
-        assertTrue(outContents[11].startsWith("1337"));
-        assertTrue(outContents[13].contains("73571"));
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("1337"));
+        assertTrue(outContent[15].contains("73571"));
+    }
+    
+    @Test
+    public void testColumnar(){
+        Scanner s = new Scanner("5\nTesti\nadbc\nx");
+        TextInterface t = new TextInterface(s);
+        t.run();
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("Columnar"));
+        assertTrue(outContent[16].contains("Ttesi"));
+    }
+    
+    @Test
+    public void testPrivateKey(){
+        Scanner s = new Scanner("6\nTesti\n1111\nx");
+        TextInterface t = new TextInterface(s);
+        t.run();
+        String[] outContent = outs.toString().split("\n");
+        assertTrue(outContent[13].startsWith("Private"));
+        assertTrue(outContent[16].contains("eTBEX"));
     }
     
 }

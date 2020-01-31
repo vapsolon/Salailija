@@ -3,7 +3,8 @@ package labra.tira.salailija.Ciphers;
 import labra.tira.salailija.Structures.MorseDict;
 
 /**
- * Morse-kääntäjä tekstille, rakennettu Morse-kirjainkääntäjän ja -sanakirjan päälle
+ * Morse-kääntäjä tekstille, rakennettu Morse-kirjainkääntäjän
+ * ja -sanakirjan päälle.
  * @author vapsolon
  */
 
@@ -14,7 +15,7 @@ public class Morse {
     private MorseDict m;
     
     /**
-     * Konstruktori alustaa Morse-sanakirjan
+     * Konstruktori alustaa Morse-sanakirjan.
      */
     public Morse(){
         //Alustetaan sanakirja kun olio luodaan

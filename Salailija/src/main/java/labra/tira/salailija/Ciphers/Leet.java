@@ -3,7 +3,8 @@ package labra.tira.salailija.Ciphers;
 import labra.tira.salailija.Structures.LeetDict;
 
 /**
- * 1337-kääntäjä tekstille, rakennettu 1337-kirjainkääntäjän ja -sanakirjan päälle
+ * 1337-kääntäjä tekstille, rakennettu 1337-kirjainkääntäjän ja
+ * -sanakirjan päälle.
  * @author vapsolon
  */
 
@@ -13,7 +14,7 @@ public class Leet {
     private LeetDict l;
     
     /**
-     * Konstruktori alustaa sanakirjan
+     * Konstruktori alustaa sanakirjan.
      */
     public Leet(){
         this.l = new LeetDict();

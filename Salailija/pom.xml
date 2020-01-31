@@ -41,6 +41,14 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.1.1</version>
             </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-checkstyle-plugin</artifactId>
+              <version>3.1.0</version>
+              <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+              </configuration>
+            </plugin>
         </plugins>
     </build>
     
@@ -69,22 +77,5 @@
             </snapshots>
         </repository>
     </repositories>
-    
-    <reporting>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.0</version>
-          <reportSets>
-            <reportSet>
-              <reports>
-                <report>checkstyle</report>
-              </reports>
-            </reportSet>
-          </reportSets>
-        </plugin>
-      </plugins>
-    </reporting>
 
 </project>

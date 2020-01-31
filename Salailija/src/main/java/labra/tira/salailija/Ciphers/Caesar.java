@@ -13,12 +13,12 @@ package labra.tira.salailija.Ciphers;
 
 
 public class Caesar {
-    
+
     private int base = 97; //Pienten kirjainten a
     private int top = 122; //Pienten kirjainten z
     private int bigbase = 65; //Isojen kirjainten A
     private int bigtop = 90; //Isojen kirjainten Z
-    
+
     /**
      * Käännösfunktio, suorittaa jokaiselle syötteen kirjaimelle määritellyn
      * rotaation ja palauttaa lopuksi tulosmerkkijonon.
@@ -26,10 +26,12 @@ public class Caesar {
      * @param rotation Käännöksessä käytettävän siirtymän määrä
      * @return Käännetty tulos
      */
-    public String cipher(String input, int rotation){
+    public String cipher(final String input, final int rotation){
         //Varmistetaan että rotaatiot ovat tällä hetkellä tuetussa ympäristössä
         if(rotation < 0 || rotation > 26){
-            System.out.println("Virheellinen rotaatiomäärä. Sallitut rotaatiot ovat välillä 0-26");
+            System.out.println(
+            "Virheellinen rotaatiomäärä. Sallitut rotaatiot ovat välillä 0-26"
+            );
             return null;
         }
         //Alustetaan salatun tekstin rakentaja
@@ -40,7 +42,7 @@ public class Caesar {
             int numval = (int)c;
             //Talletetaan uusi arvo omaan muuttujaansa
             int newval = 0;
-            
+
             //Pieni kirjain
             if(numval >= base && numval <= top){
                 //Otetaan huomioon rotaation overflow
@@ -58,7 +60,7 @@ public class Caesar {
                     newval = numval + rotation;
                 }
             }
-            
+
             //Iso kirjain
             else if(numval >= bigbase && numval <= bigtop){
                 //Lasketaan uusi siirtymä alusta:
@@ -75,7 +77,8 @@ public class Caesar {
                     newval = numval + rotation;
                 }
             }
-            //Jos merkki saatiin salattua, kirjoitetaan salattu merkki tulosjonoon
+            //Jos merkki saatiin salattua, kirjoitetaan salattu
+            //merkki tulosjonoon
             if(newval != 0){
                 encoded.append((char)newval);
             }
@@ -88,5 +91,4 @@ public class Caesar {
         //Palautetaan lopulta salattu merkkijono
         return encoded.toString();
     }
-    
 }

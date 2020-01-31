@@ -38,4 +38,11 @@ public class TestMorse {
         assertEquals("Wrong translation for string " + test, "!?äö...---...+=", m.translate(test));
     }
     
+    @Test
+    public void testFullCoverage(){
+        Morse m = new Morse();
+        String test = "cfjkqvwyz456890";
+        assertEquals("Wrong translation for string " + test, "-.-...-..----.---.-...-.---.----......-.....-....---..----.-----", m.translate(test));
+    }
+    
 }

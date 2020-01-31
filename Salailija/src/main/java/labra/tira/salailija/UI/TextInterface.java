@@ -1,9 +1,7 @@
 package labra.tira.salailija.UI;
 
 import java.util.Scanner;
-import labra.tira.salailija.Ciphers.Caesar;
-import labra.tira.salailija.Ciphers.Leet;
-import labra.tira.salailija.Ciphers.Morse;
+import labra.tira.salailija.Ciphers.*;
 
 /**
  * Väliaikainen tekstikäyttöliittymä ohjelmalle sillä välin kun tärkeämpiä osia
@@ -17,6 +15,8 @@ public class TextInterface {
     private Caesar c;
     private Leet leet;
     private Morse morse;
+    private ColumnarTransposition ct;
+    private PrivateKey pk;
     
     /**
      * Parametriton konstruktori vakiokäyttöön.
@@ -28,8 +28,8 @@ public class TextInterface {
     /**
      * Varsinainen konstruktori joka ottaa vastaan Scannerin parametrina.
      * Toteutettu näin testaamissyistä. <br>
-     * Asettaa tarjotun skannerin luokan käytettäväksi ja alustaa kaikki käytössä
-     * olevat käännöspalvelut.
+     * Asettaa tarjotun skannerin luokan käytettäväksi ja alustaa kaikki
+     * käytössä olevat käännöspalvelut.
      * @param s Syötteen vastaanottamiseen käytettävä Scanner
      */
     public TextInterface(Scanner s){
@@ -37,6 +37,8 @@ public class TextInterface {
         this.c = new Caesar();
         this.leet = new Leet();
         this.morse = new Morse();
+        this.ct = new ColumnarTransposition();
+        this.pk = new PrivateKey();
     }
     
     /**
@@ -52,6 +54,8 @@ public class TextInterface {
         System.out.println(" 2) ROT13");
         System.out.println(" 3) Morse");
         System.out.println(" 4) 1337");
+        System.out.println(" 5) Columnar Transposition");
+        System.out.println(" 6) Private Key Encryption");
         System.out.println("");
         System.out.println(" x) Poistu"); //Tuloste 8
         //Loopataan loputtomasti kunnes käyttäjä haluaa pois
@@ -110,9 +114,33 @@ public class TextInterface {
                 System.out.println("");
                 System.out.println("Tulos: " + leet.translate(plaintext));
             }
+            else if(action.equals("5")){
+                System.out.println("");
+                System.out.println("Columnar Transposition valittu");
+                System.out.print("Syötä salattava sana tai lause: ");
+                String plaintext = input.nextLine();
+                System.out.println("");
+                System.out.print("Syötä salauksessa käytettävä avain: ");
+                String key = input.nextLine();
+                System.out.println("");
+                System.out.println("Tulos: " + ct.translate(plaintext, key));
+            }
+            else if(action.equals("6")){
+                System.out.println("");
+                System.out.println("Private Key valittu");
+                System.out.print("Syötä salattava sana tai lause: ");
+                String plaintext = input.nextLine();
+                System.out.println("");
+                System.out.print("Syötä salauksessa käytettävä avain: ");
+                String key = input.nextLine();
+                System.out.println("");
+                System.out.println("Tulos: " + pk.translate(plaintext, key));
+            }
             else{
                 System.out.println("");
-                System.out.println("Epäkelpo syöte " + action + ", yritä uudestaan");
+                System.out.println("Epäkelpo syöte " + action
+                        + ", yritä uudestaan"
+                );
             }
         }
     }
