@@ -1,4 +1,4 @@
-# Viikkoraportti 2
+# Viikkoraportti 3
 
 ### Tekemiset
 Viimeiset kaksi suunniteltua salausmenetelmää saatiin valmiiksi ja kaikki kielletyt valmiit tietorakenteet on tiettävästi saatu karsittua pois, tästä tosin lisää myöhemmin. Ensimmäisen varsinaisen produktioviikon oppimisprosessin jälkeen testaaminen ja vaadittavat dokumentaatiot kuten **PIT** ja **javadoc** olivat helppoja eivätkä vieneet varsinaista kehitysaikaa juuri ollenkaan. Checkstyle tuli conffattua hyvin karkeasti omaa tyyliä vastaavaan muotoon, jonka ansiosta suuri osa aidosti virheellisistä tyyliseikoistakin saatiin korjattua.
