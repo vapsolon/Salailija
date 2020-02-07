@@ -2,6 +2,7 @@
 package labra.tira.salailija.Ciphers;
 
 import labra.tira.salailija.Utils.Quicksort;
+import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
  * Hyvin rajoitettu Columnar Transposition -toteutus. Ottaa käyttäjältä vastaan
@@ -46,7 +47,7 @@ public class ColumnarTransposition {
         int surplus = message.length() % keyLen;
         if(surplus > 0){
             rows++;
-            for(int k=0;k<keyLen-surplus;k++){
+            for(int k=0;0<=k && k<keyLen-surplus;k++){
                 message += " ";
             }
         }
@@ -70,7 +71,7 @@ public class ColumnarTransposition {
         }*/
         
         //Luodaan lopullisen tuloksen rakentaja
-        StringBuilder result = new StringBuilder();
+        ResultBuilder result = new ResultBuilder();
         //Rakennetaan vielä salattu merkkijono matriisin palikoista
         for(int i=0;i<rows;i++){
             for(int j=0;j<keyLen;j++){

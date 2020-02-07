@@ -10,6 +10,13 @@ import org.junit.Test;
 
 public class TestTextInterface {
     
+    /*Kuten varsinainen TextInterface, myös testiluokka on nyt virallisesti
+    * vanhentunut. Pidetään kylmäsäilössä pahan päivän varalle ainakin hetken
+    * aikaa, poistetaan jossain vaiheessa, ainakin ennen viimeistä palautusta
+    * ja demoa
+    */
+    
+    /*
     private final ByteArrayOutputStream outs = new ByteArrayOutputStream();
     private final PrintStream outo = System.out;
     //Lisää debugaamistavaraa, katso alle
@@ -29,7 +36,7 @@ public class TestTextInterface {
         for(String s: outContents){
             System.out.println("=== " + i + ": " + s);
             i++;
-        }*/
+        }
     }
     
     @Test
@@ -100,5 +107,5 @@ public class TestTextInterface {
         assertTrue(outContent[13].startsWith("Private"));
         assertTrue(outContent[16].contains("eTBEX"));
     }
-    
+    */
 }

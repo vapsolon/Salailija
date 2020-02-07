@@ -1,4 +1,7 @@
 package labra.tira.salailija.Ciphers;
+import labra.tira.salailija.UI.GraphicalInterface;
+import labra.tira.salailija.Utils.CharArray;
+import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
  * Caesarian Shift -toteutus, tällä hetkellä vielä amerikkalaistyylinen eli
@@ -18,7 +21,27 @@ public class Caesar {
     private int top = 122; //Pienten kirjainten z
     private int bigbase = 65; //Isojen kirjainten A
     private int bigtop = 90; //Isojen kirjainten Z
+    private GraphicalInterface g;
 
+    /**
+     * Parametriton konstruktori erikoiskäyttöön.
+     */
+    public Caesar(){
+        this(new GraphicalInterface(false));
+    }
+    
+    /**
+     * Varsinainen konstruktori joka ottaa vastaan graafisen käyttöliittymän
+     * viitteen. <br>
+     * Mahdollistaa virheiden helpon välittämisen takaisin käyttöliittymälle
+     * joka voi sitten piirtää ne ruudulle konsolin käyttämisen tai erityisen
+     * viestintäluokan sijasta.
+     * @param gi Viite käynnissä olevaan graafiseen käyttöliittymään
+     */
+    public Caesar(GraphicalInterface gi){
+        this.g = gi;
+    }
+    
     /**
      * Käännösfunktio, suorittaa jokaiselle syötteen kirjaimelle määritellyn
      * rotaation ja palauttaa lopuksi tulosmerkkijonon.
@@ -29,15 +52,16 @@ public class Caesar {
     public String cipher(final String input, final int rotation){
         //Varmistetaan että rotaatiot ovat tällä hetkellä tuetussa ympäristössä
         if(rotation < 0 || rotation > 26){
-            System.out.println(
-            "Virheellinen rotaatiomäärä. Sallitut rotaatiot ovat välillä 0-26"
+            g.error(
+            "Virheellinen rotaatiomäärä.\nSallitut rotaatiot ovat välillä 0-26"
             );
             return null;
         }
         //Alustetaan salatun tekstin rakentaja
-        StringBuilder encoded = new StringBuilder();
+        ResultBuilder rb = new ResultBuilder();
+        CharArray ca = new CharArray();
         //Käydään salattava data läpi merkki kerrallaan
-        for(char c: input.toCharArray()){
+        for(char c: ca.convert(input)){
             //Haetaan merkin numeerinen esitys
             int numval = (int)c;
             //Talletetaan uusi arvo omaan muuttujaansa
@@ -80,15 +104,15 @@ public class Caesar {
             //Jos merkki saatiin salattua, kirjoitetaan salattu
             //merkki tulosjonoon
             if(newval != 0){
-                encoded.append((char)newval);
+                rb.append((char)newval);
             }
             //Jos merkkiä ei saatu (vielä) salattua, kirjoitetaan se silti jonon
             //jatkoksi jotta tietoa (välimerkit, numerot, ääkköset) ei häviä
             else{
-                encoded.append(c);
+                rb.append(c);
             }
         }
         //Palautetaan lopulta salattu merkkijono
-        return encoded.toString();
+        return rb.toString();
     }
 }

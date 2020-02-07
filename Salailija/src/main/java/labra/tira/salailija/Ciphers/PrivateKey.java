@@ -1,5 +1,8 @@
 package labra.tira.salailija.Ciphers;
 
+import labra.tira.salailija.Utils.CharArray;
+import labra.tira.salailija.Utils.ResultBuilder;
+
 /**
  * Yksinkertainen yksityisen avaimen symmetrinen salausmenetelmä <br>
  * Ottaa vastaan viestin ja käyttäjän määrittelemän avaimen ja salaa viestin
@@ -22,9 +25,10 @@ public class PrivateKey {
      * @return Salattu viesti
      */
     public String translate(String message, String key){
-        StringBuilder result = new StringBuilder();
+        ResultBuilder result = new ResultBuilder();
+        CharArray ca = new CharArray();
         int keyPos = 0;
-        for(char c: message.toCharArray()){
+        for(char c: ca.convert(message)){
             if(keyPos == key.length()){
                 keyPos = 0;
             }

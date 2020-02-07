@@ -50,4 +50,12 @@ public class TestPrivateKey {
         assertEquals("Wrong translation for string " + test + " with key " + key, test, pk.translate(cycle, key));
     }
     
+    @Test
+    public void testNoCycle(){
+        PrivateKey pk = new PrivateKey();
+        String test = "test";
+        String key = "123";
+        assertEquals("Wrong translation for string " + test + " with key " + key, "EW@E", pk.translate(test, key));
+    }
+    
 }

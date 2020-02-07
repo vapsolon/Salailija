@@ -1,7 +1,7 @@
 package labra.tira.salailija;
 
-import labra.tira.salailija.UI.TextInterface;
-
+import javafx.application.Application;
+import labra.tira.salailija.UI.GraphicalInterface;
 /**
  * Pääluokka koko ohjelmalle. Tällä hetkellä käynnistää vain
  * tekstikäyttöliittymän mutta tulevaisuudessa graafisen käyttöliittymän
@@ -16,8 +16,10 @@ public class Main {
      * @param args main-argumentit joita ainakaan tässä vaiheessa ei ole
      */
     public static void main(String[] args){
-        TextInterface t = new TextInterface();
-        t.run();
+        //TextInterface t = new TextInterface();
+        Application.launch(GraphicalInterface.class,
+                "--testing=no");
+        //t.run();
     }
     
 }

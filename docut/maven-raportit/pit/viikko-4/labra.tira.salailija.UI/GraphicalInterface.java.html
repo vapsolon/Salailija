@@ -1,0 +1,5211 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>GraphicalInterface.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package labra.tira.salailija.UI;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.application.Application;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.event.ActionEvent;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.event.EventHandler;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.geometry.Insets;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.geometry.Pos;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.Scene;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.Button;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.Label;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.RadioButton;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.TextArea;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.TextField;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.control.ToggleGroup;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.layout.BorderPane;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.layout.GridPane;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.layout.HBox;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.text.TextAlignment;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.stage.Stage;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Ciphers.Caesar;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Ciphers.ColumnarTransposition;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Ciphers.Leet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Ciphers.Morse;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Ciphers.PrivateKey;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Utils.InputChecker;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Kauan odotettu graafinen k&#195;&#164;ytt&#195;&#182;liittym&#195;&#164;. &#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * T&#195;&#164;ll&#195;&#164; hetkell&#195;&#164; kevyimm&#195;&#164;ss&#195;&#164; muodossaan, kuitenkin hyvin toiminnallinen ja </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * jopa k&#195;&#164;ytt&#195;&#182;valmis. Sy&#195;&#182;te ja tuloste ovat omissa tekstialueissaan ja </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * kontrollien avulla voi vaihtaa salausmenetelm&#195;&#164;&#195;&#164;. Kontrollit my&#195;&#182;s n&#195;&#164;ytt&#195;&#164;v&#195;&#164;t</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * ja piilottavat lis&#195;&#164;tietoja kyselev&#195;&#164;t kent&#195;&#164;t tarpeen mukaan. &#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Laajenee varmaan viel&#195;&#164; huomattavasti ainakin suunnitellun</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * purkamistoiminnallisuuden my&#195;&#182;t&#195;&#164;, lis&#195;&#164;ksi tarkoitus on rajoittaa Private Key</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * puhtaasti tiedostosalaamismenetelm&#195;&#164;ksi joten n&#195;&#164;ilt&#195;&#164;kin osin laajenemista</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * tulossa.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author vapsolon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_38'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_39'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>public class GraphicalInterface extends Application {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_40'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Caesar c;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Leet leet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_43'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Morse morse;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_44'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private ColumnarTransposition ct;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_45'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private PrivateKey pk;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_46'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private InputChecker ic;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_47'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    //error on globaali jotta salausluokat voivat helposti kommunikoida</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_48'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    //k&#195;&#164;ytt&#195;&#182;liittym&#195;&#164;n kanssa</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Label error;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    //Pidet&#195;&#164;&#195;&#164;n kirjaa virhetilasta. 0 Jos virhett&#195;&#164; ei ole tapahtunut, 1 jos on</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_51'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private int errorState = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_52'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    //Vermistetaan my&#195;&#182;s ett&#195;&#164; luokka on tietoinen jos sit&#195;&#164; testataan</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_53'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private boolean testing = false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_54'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_55'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_56'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Tyhj&#195;&#164; konstruktori normaalik&#195;&#164;ytt&#195;&#182;&#195;&#182;n.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_58'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public GraphicalInterface(){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_59'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        this(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_60'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_61'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_62'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Parametrillinen konstruktori testaamisen takia. Ottaa vastaan tiedon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * siit&#195;&#164;, ett&#195;&#164; luokkaa testataan, ja osaa t&#195;&#164;m&#195;&#164;n perusteella olla l&#195;&#164;htem&#195;&#164;tt&#195;&#164;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_65'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * k&#195;&#164;yntiin ja sallii silti UI:n kanssa kommunikoivien luokkien helpon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_66'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * testaamisen.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_67'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param test Testataanko luokkaa, true jos olion on luonut testiluokka,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_68'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * false muuten.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_70'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public GraphicalInterface(boolean test){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_71'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.c = new Caesar(this);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_72'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.leet = new Leet();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_73'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.morse = new Morse();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_74'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.ct = new ColumnarTransposition();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_75'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.pk = new PrivateKey();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_76'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.ic = new InputChecker();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_77'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.testing = test;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_78'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_79'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_80'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_81'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public final void start(Stage window){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_82'/>
+82
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_82'>1</a>
+<span>
+
+1. start : removed call to javafx/stage/Stage::setTitle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        window.setTitle(&#34;Salailija&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_83'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_84'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Luodaan pohja-asettelu</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_85'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        BorderPane base = new BorderPane();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_86'/>
+86
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_86'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/BorderPane::setPadding &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        base.setPadding(new Insets(10, 10, 10, 10));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_87'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Luodaan keskelle sy&#195;&#182;tteen ja tulosteen sis&#195;&#164;lt&#195;&#164;v&#195;&#164; asettelu</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_88'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        GridPane inputBox = new GridPane();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_89'/>
+89
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_89'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::setHgap &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.setHgap(10);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_90'/>
+90
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_90'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::setVgap &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.setVgap(10);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_91'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Luodaan salausmenetelm&#195;&#164;vaihtajan asettelu</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_92'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        HBox controlBox = new HBox(10);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_93'/>
+93
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_93'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/HBox::setAlignment &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        controlBox.setAlignment(Pos.CENTER);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_94'/>
+94
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_94'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/HBox::setPadding &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        controlBox.setPadding(new Insets(20, 0, 0, 0));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_95'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_96'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Ladotaan inputBox t&#195;&#164;yteen komponentteja</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_97'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Label inputLabel = new Label(&#34;Salattava sy&#195;&#182;te&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_98'/>
+98
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_98'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputLabel.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_99'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Label outputLabel = new Label(&#34;Salattu tulos&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_100'/>
+100
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_100'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        outputLabel.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_101'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Label keyLabel = new Label(&#34;Salauksessa k&#195;&#164;ytett&#195;&#164;v&#195;&#164; avain&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_102'/>
+102
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_102'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keyLabel.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_103'/>
+103
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_103'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        keyLabel.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_104'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Label rotationLabel = new Label(&#34;Salauksessa k&#195;&#164;ytett&#195;&#164;v&#195;&#164; rotaatio&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_105'/>
+105
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_105'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        rotationLabel.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_106'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_107'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        TextArea input = new TextArea(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_108'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        TextArea output = new TextArea(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_109'/>
+109
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_109'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/TextArea::setEditable &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        output.setEditable(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_110'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        TextField key = new TextField(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_111'/>
+111
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_111'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        key.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_112'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        TextField rotation = new TextField(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_113'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_114'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Button cipher = new Button(&#34;Salaa&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_115'/>
+115
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_115'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Button::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        cipher.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_116'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Anna napeista pienemm&#195;&#164;n skaalautua suuremman varaamaan kokoon</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_117'/>
+117
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_117'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Button::setMaxWidth &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        cipher.setMaxWidth(Double.MAX_VALUE);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_118'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Button swap = new Button(&#34;&#60;- Vaihda&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_119'/>
+119
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_119'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Button::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        swap.setStyle(&#34;-fx-font-size: 16;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_120'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_121'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.error = new Label(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_122'/>
+122
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_122'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setAlignment &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setAlignment(Pos.CENTER);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_123'/>
+123
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_123'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setTextAlignment &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setTextAlignment(TextAlignment.CENTER);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_124'/>
+124
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_124'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setStyle(&#34;-fx-font-size: 16;-fx-background-color: #FF6666;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_125'/>
+125
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_125'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setMaxWidth &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setMaxWidth(Double.MAX_VALUE);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_126'/>
+126
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_126'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setMaxHeight &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setMaxHeight(Double.MAX_VALUE);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_127'/>
+127
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_127'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        this.error.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_128'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_129'/>
+129
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_129'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(inputLabel, 0, 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_130'/>
+130
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_130'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(input, 0, 1);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_131'/>
+131
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_131'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(outputLabel, 2, 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_132'/>
+132
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_132'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(output, 2, 1);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_133'/>
+133
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_133'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(keyLabel, 0, 2);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_134'/>
+134
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_134'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(rotationLabel, 0, 2);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_135'/>
+135
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_135'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(key, 0, 3);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_136'/>
+136
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_136'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(rotation, 0, 3);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_137'/>
+137
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_137'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(swap, 1, 4);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_138'/>
+138
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_138'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(cipher, 1, 5);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_139'/>
+139
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_139'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        inputBox.add(error, 0, 4, 1, 2);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_140'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_141'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Ladotaan controlBox t&#195;&#164;yteen komponentteja</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_142'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton caesarb = new RadioButton(&#34;Caesarian Cipher&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_143'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton rot13b = new RadioButton(&#34;ROT13&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_144'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton leetb = new RadioButton(&#34;1337&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_145'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton morseb = new RadioButton(&#34;Morse&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_146'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton ctb = new RadioButton(&#34;Columnar Transposition&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_147'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        RadioButton privkeyb = new RadioButton(&#34;Private Key&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_148'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_149'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        ToggleGroup control = new ToggleGroup();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_150'/>
+150
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_150'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        caesarb.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_151'/>
+151
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_151'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setSelected &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        caesarb.setSelected(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_152'/>
+152
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_152'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        rot13b.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_153'/>
+153
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_153'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        leetb.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_154'/>
+154
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_154'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        morseb.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_155'/>
+155
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_155'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        ctb.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_156'/>
+156
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_156'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        privkeyb.setToggleGroup(control);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_157'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_158'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(caesarb);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_159'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(rot13b);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_160'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(leetb);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_161'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(morseb);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_162'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(ctb);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_163'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        controlBox.getChildren().add(privkeyb);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_164'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_165'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Lis&#195;&#164;t&#195;&#164;&#195;&#164;n aliasetelmat p&#195;&#164;&#195;&#164;asetelmaan</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_166'/>
+166
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_166'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/BorderPane::setCenter &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        base.setCenter(inputBox);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_167'/>
+167
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_167'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/layout/BorderPane::setBottom &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        base.setBottom(controlBox);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_168'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_169'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //Luodaan tapahtumak&#195;&#164;sittelij&#195;&#164;t</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_170'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        EventHandler controlHandler = new EventHandler&#60;ActionEvent&#62;(){</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_171'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_172'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            public void handle(ActionEvent e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_173'/>
+173
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_173'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                if(e.getSource() == caesarb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_174'/>
+174
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_174'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    keyLabel.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_175'/>
+175
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_175'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    key.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_176'/>
+176
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_176'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotationLabel.setVisible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_177'/>
+177
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_177'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotation.setVisible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_178'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_179'/>
+179
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_179'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(e.getSource() == leetb</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_180'/>
+180
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_180'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        || e.getSource() == morseb</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_181'/>
+181
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_181'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        || e.getSource() == rot13b){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_182'/>
+182
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_182'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotationLabel.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_183'/>
+183
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_183'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotation.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_184'/>
+184
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_184'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    keyLabel.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_185'/>
+185
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_185'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    key.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_186'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_187'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                else{</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_188'/>
+188
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_188'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotationLabel.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_189'/>
+189
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_189'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    rotation.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_190'/>
+190
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_190'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    keyLabel.setVisible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_191'/>
+191
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_191'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    key.setVisible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_192'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_193'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_194'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_195'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_196'/>
+196
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_196'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        EventHandler buttonHandler = new EventHandler&#60;ActionEvent&#62;(){</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_197'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_198'/>
+198
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_198'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            public void handle(ActionEvent e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_199'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                //K&#195;&#164;sitell&#195;&#164;&#195;&#164;n ensin virhetilanteesta palaaminen</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_200'/>
+200
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_200'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                if(errorState == 1){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_201'/>
+201
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_201'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    errorState = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_202'/>
+202
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_202'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    error.setText(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_203'/>
+203
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_203'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    error.setVisible(false);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_204'/>
+204
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_204'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_205'/>
+205
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_205'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_206'/>
+206
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_206'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                if(control.getSelectedToggle() == caesarb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_207'/>
+207
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_207'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    if(!ic.isNumeric(rotation.getText())){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_208'/>
+208
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_208'>1</a>
+<span>
+
+1. handle : removed call to labra/tira/salailija/UI/GraphicalInterface::error &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        error(&#34;Virheellinen rotaatiom&#195;&#164;&#195;&#164;r&#195;&#164;.\nAnnettu rotaatio&#34;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_209'/>
+209
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_209'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                                + &#34; sis&#195;&#164;lt&#195;&#164;&#195;&#164; ei-numeerisia merkkej&#195;&#164;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_210'/>
+210
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_210'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_211'/>
+211
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_211'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    else{</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_212'/>
+212
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_212'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        output.setText(c.cipher(input.getText(),</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_213'/>
+213
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_213'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                                Integer.valueOf(rotation.getText())));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_214'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_215'/>
+215
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_215'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_216'/>
+216
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_216'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(control.getSelectedToggle() == rot13b){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_217'/>
+217
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_217'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    output.setText(c.cipher(input.getText(), 13));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_218'/>
+218
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_218'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_219'/>
+219
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_219'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(control.getSelectedToggle() == leetb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_220'/>
+220
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_220'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    output.setText(leet.translate(input.getText()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_221'/>
+221
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_221'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_222'/>
+222
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_222'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(control.getSelectedToggle() == morseb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_223'/>
+223
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_223'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    output.setText(morse.translate(input.getText()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_224'/>
+224
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_224'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_225'/>
+225
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_225'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(control.getSelectedToggle() == ctb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_226'/>
+226
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_226'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    output.setText(ct.translate(input.getText(),</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_227'/>
+227
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_227'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                            key.getText()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_228'/>
+228
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_228'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_229'/>
+229
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_229'>1</a>
+<span>
+
+1. handle : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                else if(control.getSelectedToggle() == privkeyb){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_230'/>
+230
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_230'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    output.setText(pk.translate(input.getText(),</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_231'/>
+231
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_231'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                            key.getText()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_232'/>
+232
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_232'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_233'/>
+233
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_233'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_234'/>
+234
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_234'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_235'/>
+235
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_235'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_236'/>
+236
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_236'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        EventHandler switchHandler = new EventHandler&#60;ActionEvent&#62;(){</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_237'/>
+237
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_237'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_238'/>
+238
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_238'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            public void handle(ActionEvent e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_239'/>
+239
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_239'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                input.setText(output.getText());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_240'/>
+240
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_240'>1</a>
+<span>
+
+1. handle : removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                output.setText(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_241'/>
+241
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_241'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_242'/>
+242
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_242'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_243'/>
+243
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_243'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_244'/>
+244
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_244'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        caesarb.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_245'/>
+245
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_245'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        rot13b.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_246'/>
+246
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_246'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        leetb.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_247'/>
+247
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_247'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        morseb.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_248'/>
+248
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_248'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        ctb.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_249'/>
+249
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_249'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        privkeyb.setOnAction(controlHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_250'/>
+250
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_250'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_251'/>
+251
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_251'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Button::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        cipher.setOnAction(buttonHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_252'/>
+252
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_252'>1</a>
+<span>
+
+1. start : removed call to javafx/scene/control/Button::setOnAction &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        swap.setOnAction(switchHandler);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_253'/>
+253
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_253'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_254'/>
+254
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_254'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        Scene view = new Scene(base);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_255'/>
+255
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_255'>1</a>
+<span>
+
+1. start : removed call to javafx/stage/Stage::setScene &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        window.setScene(view);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_256'/>
+256
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_256'>1</a>
+<span>
+
+1. start : removed call to javafx/stage/Stage::show &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        window.show();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_257'/>
+257
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_257'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_258'/>
+258
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_258'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_259'/>
+259
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_259'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_260'/>
+260
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_260'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Ulkomaailmalle n&#195;&#164;kyviss&#195;&#164; oleva helppo tapa kommunikoida sattuneet virheet</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_261'/>
+261
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_261'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * UI:lle. &#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_262'/>
+262
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_262'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Ottaa vastaan kommunikoivan luokan l&#195;&#164;hett&#195;&#164;m&#195;&#164;n viestin ja asettaa sen</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_263'/>
+263
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_263'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * virhetekstikent&#195;&#164;n arvoksi. T&#195;&#164;m&#195;&#164;n j&#195;&#164;lkeen virhekentt&#195;&#164; asetetaan viel&#195;&#164;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_264'/>
+264
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_264'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * n&#195;&#164;kyviin ja kerrotaan muulle luokalle sen olevan n&#195;&#164;kyviss&#195;&#164;. Virhe</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_265'/>
+265
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_265'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * piilotetaan kun k&#195;&#164;&#195;&#164;nn&#195;&#182;snappia painetaan seuraavan kerran.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_266'/>
+266
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_266'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param message Ruudulla n&#195;&#164;ytett&#195;&#164;v&#195;&#164; virheviesti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_267'/>
+267
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_267'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_268'/>
+268
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_268'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void error(String message){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_269'/>
+269
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_269'>1</a>
+<span>
+
+1. error : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if(!testing){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_270'/>
+270
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_270'>1</a>
+<span>
+
+1. error : removed call to javafx/scene/control/Label::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            this.error.setText(message);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_271'/>
+271
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_271'>1</a>
+<span>
+
+1. error : removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            this.error.setVisible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_272'/>
+272
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_272'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            this.errorState = 1;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_273'/>
+273
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_273'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_274'/>
+274
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_274'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3a1706e1_275'/>
+275
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_275'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_82'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/stage/Stage::setTitle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_86'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/BorderPane::setPadding &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_89'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::setHgap &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_90'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::setVgap &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_93'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/HBox::setAlignment &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_94'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/HBox::setPadding &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_98'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_100'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_102'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_103'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_105'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_109'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setEditable &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_111'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_115'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Button::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_117'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Button::setMaxWidth &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_119'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Button::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_122'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setAlignment &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_123'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setTextAlignment &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_124'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setStyle &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_125'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setMaxWidth &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_126'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setMaxHeight &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_127'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_129'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_130'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_131'>131</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_131'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_132'>132</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_132'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_133'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_134'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_135'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_136'>136</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_136'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_137'>137</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_137'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_138'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_139'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/GridPane::add &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_150'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_151'>151</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_151'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setSelected &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_152'>152</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_152'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_153'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_154'>154</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_154'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_155'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_156'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setToggleGroup &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_166'>166</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_166'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/BorderPane::setCenter &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_167'>167</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_167'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/layout/BorderPane::setBottom &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_173'>173</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_173'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_174'>174</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_174'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_175'>175</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_175'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_176'>176</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_176'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_177'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_179'>179</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_179'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_180'>180</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_180'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_181'>181</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_181'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_182'>182</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_182'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_183'>183</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_183'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_184'>184</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_184'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_185'>185</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_185'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_188'>188</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_188'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_189'>189</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_189'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_190'>190</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_190'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_191'>191</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_191'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextField::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_200'>200</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_200'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_202'>202</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_202'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_203'>203</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_203'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_206'>206</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_206'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_207'>207</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_207'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_208'>208</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_208'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to labra/tira/salailija/UI/GraphicalInterface::error &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_212'>212</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_212'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_216'>216</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_216'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_217'>217</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_217'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_219'>219</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_219'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_220'>220</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_220'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_222'>222</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_222'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_223'>223</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_223'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_225'>225</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_225'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_226'>226</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_226'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_229'>229</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_229'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_230'>230</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_230'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_239'>239</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_239'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_240'>240</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_240'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>handle<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/TextArea::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_244'>244</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_244'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_245'>245</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_245'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_246'>246</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_246'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_247'>247</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_247'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_248'>248</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_248'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_249'>249</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_249'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/RadioButton::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_251'>251</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_251'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Button::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_252'>252</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_252'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Button::setOnAction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_255'>255</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_255'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/stage/Stage::setScene &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_256'>256</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_256'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>start<br/><b>Killed by : </b>none</span></span> removed call to javafx/stage/Stage::show &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_269'>269</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_269'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>error<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestCaesar.labra.tira.salailija.Ciphers.TestCaesar</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_270'>270</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_270'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>error<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setText &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3a1706e1_271'>271</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3a1706e1_271'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>error<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/control/Label::setVisible &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>labra.tira.salailija.Ciphers.TestCaesar.labra.tira.salailija.Ciphers.TestCaesar (26 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>

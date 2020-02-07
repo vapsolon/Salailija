@@ -1,0 +1,11 @@
+# Salailija - Käyttöohje
+.jar löytyy **build**-kansiosta ja sen pitäisi olla täysin ajokunnossa ja vastata viikon 4 palautusta. Käynnistys ei vaadi mitään erityistä ja ohjelman tulisi lähteä käyntiin tuosta vain.
+
+### Syötteet
+Eri salausmenetelmät vaativat omanlaisensa syötteet. Ohjelma tekee parhaansa vaihtaakseen esille oikeat tekstit ja syötekentät, mutta joitakin rajoituksia on silti voimassa, ja nämä rajoitukset selvitetään tarkemmin täällä.
+
+* Caesarian Chiper: Käytettävän rotaation tulisi olla välillä 0-26 ja sisältää ainoastaan numeroita. Näistä rajoitteista ohjelma osaa itse valittaa, mutta kriittisen virheen varalta nämäkin on täällä listattu. Lisäksi nykyinen Caesar-toteutus on hyvin amerikkalainen, eli ääkkösiä, numeroita tai muita erikoismerkkejä ei tueta, ainoastaan isot ja pienet kirjaimet välillä a-z, A-Z.
+* ROT13: Caesarin sovellus, mutta tällä kertaa puolikkaalla inputilla. Rotaatiota ei siis kysytä mutta salattavaan viestiin pätevät samat amerikkalaisrajoitukset, ei ääkkösiä täälläkään.
+* 1337 ja Morse: Molemmat yllättävän virheettömiä. 1337 kattaa yleisimmät muunnokset ja Morse vastaa Wikipediasta löydettyä aakkostoa. Molemmilla vain sisään ja ulos, ei ylimääräistä.
+* Columnar Transposition: Upouuden avainkentän debyytti. Avain voi olla oikeastaan mitä tahansa, sisäisesti ainoa merkitsevä tekijä on avaimen merkkien "aakkosjärjestys" eli käytännössä niiden numeeristen arvojen erot. Hyvin erikoiset merkit kuten vaikkapa kanji tai emojit saattavat mahdollisesti aiheuttaa ongelmia tai lisätä ylimääräisiä välimerkkejä tiettyihin kohtiin, mutta näidenkin erikoistapausten purkaminen onnistuu joten epävirallinen tuki myönnetty.
+* Private Key: Toinen avainpohjainen salaus, tällä kertaa avain on vielä tärkeämmässä roolissa. Länsimaisen aakkoston toteutuksen vuoksi erikoismerkkiavain on itse asiassa suositeltu vaihtoehto tekstin salaamiselle, sillä erikoismerkeillä datan häviämisen todennäköisyys on paljon pienempi. Käytä siis tässä vaiheessa avaimena numeroita tai erikoismerkkejä onnistuneen salaamisen takaamiseksi, tavallisia aakkosia omalla riskillä.

@@ -92,12 +92,16 @@ public class Dictionary {
      * skaalaudutaan täten paremmin myös tulevaisuutta ajatellen.
      */
     public void grow(){
-        Translation[] temp = new Translation[this.size+this.size];
-        for(int i=0;i<this.size;i++){
-            temp[i] = this.dictionary[i];
+        //Tuplatarkistus pääasiassa jotta PIT ajaa paremmin eikä syö koko
+        //tarjolla olevaa muistia erroriin asti
+        if(this.openIndex == this.size){
+            Translation[] temp = new Translation[this.size+this.size];
+            for(int i=0;i<this.size;i++){
+                temp[i] = this.dictionary[i];
+            }
+            this.dictionary = temp;
+            this.size = size+size;
         }
-        this.dictionary = temp;
-        this.size = size+size;
     }
     
 }

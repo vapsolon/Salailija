@@ -4,9 +4,10 @@ import java.util.Scanner;
 import labra.tira.salailija.Ciphers.*;
 
 /**
- * Väliaikainen tekstikäyttöliittymä ohjelmalle sillä välin kun tärkeämpiä osia
- * vielä kehitetään. Tarkoitus vaihtaa mukavaan pieneen graafiseen versioon
- * ajallaan
+ * Nyt vanhentunut ja käyttämätön tekstikäyttöliittymä, korvaava graafinen
+ * versio on käyttökelpoinen ja tulee seuraavaan palautukseen mukaan. <br>
+ * Tämä vanha versio pysyy täällä ainakin hetken kaiken varalle
+ * varastona vanhalle koodille jota saattaa vielä tarvita tulevaisuudessa.
  * @author vapsolon
  */
 public class TextInterface {
@@ -20,7 +21,7 @@ public class TextInterface {
     
     /**
      * Parametriton konstruktori vakiokäyttöön.
-     */
+     *
     public TextInterface(){
         this(new Scanner(System.in));
     }
@@ -31,7 +32,7 @@ public class TextInterface {
      * Asettaa tarjotun skannerin luokan käytettäväksi ja alustaa kaikki
      * käytössä olevat käännöspalvelut.
      * @param s Syötteen vastaanottamiseen käytettävä Scanner
-     */
+     *
     public TextInterface(Scanner s){
         this.input = s;
         this.c = new Caesar();
@@ -45,7 +46,7 @@ public class TextInterface {
      * Varsinainen käyttöliittymä klassisessa tekstimuodossa. <br><br>
      * Tulostaa listan toiminnoista ja kysyy loputtomassa silmukassa käyttäjältä
      * komentoja kunnes käyttäjä päättää lopettaa.
-     */
+     *
     public void run(){
         System.out.println("Tervetuloa Salailijaan!");
         System.out.println("Mitä haluaisit tehdä?");
@@ -83,6 +84,7 @@ public class TextInterface {
                 if(result != null){
                     System.out.println("Tulos: " + result);
                 }
+                
             }
             else if(action.equals("2")){
                 System.out.println("");
@@ -144,5 +146,6 @@ public class TextInterface {
             }
         }
     }
-    
+  
+    */
 }

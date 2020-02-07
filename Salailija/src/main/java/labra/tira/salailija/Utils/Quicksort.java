@@ -28,7 +28,8 @@ public class Quicksort {
     public int[] start(String s){
         this.characters = new CharIndex[s.length()];
         int i = 0;
-        for(char c: s.toCharArray()){
+        CharArray ca = new CharArray();
+        for(char c: ca.convert(s)){
             CharIndex ci = new CharIndex(c, i);
             this.characters[i] = ci;
             i++;
@@ -71,7 +72,8 @@ public class Quicksort {
         for(int i=1;i<this.characters.length;i++){
             CharIndex current = this.characters[i];
             CharIndex pred = this.characters[i-1];
-            if((pred.getChar() == current.getChar()) && (pred.getIndex() > current.getIndex())){
+            if((pred.getChar() == current.getChar())
+                    && (pred.getIndex() > current.getIndex())){
                 this.characters[i-1] = current;
                 this.characters[i] = pred;
                 identical();

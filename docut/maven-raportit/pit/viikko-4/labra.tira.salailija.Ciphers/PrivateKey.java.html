@@ -1,0 +1,779 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>PrivateKey.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package labra.tira.salailija.Ciphers;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Utils.CharArray;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import labra.tira.salailija.Utils.ResultBuilder;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Yksinkertainen yksityisen avaimen symmetrinen salausmenetelm&#195;&#164; &#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Ottaa vastaan viestin ja k&#195;&#164;ytt&#195;&#164;j&#195;&#164;n m&#195;&#164;&#195;&#164;rittelem&#195;&#164;n avaimen ja salaa viestin</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * avaimen avulla XOR-operaatioilla.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * T&#195;&#164;ll&#195;&#164; hetkell&#195;&#164; hieman hankalak&#195;&#164;ytt&#195;&#182;inen sill&#195;&#164; tekstik&#195;&#164;ytt&#195;&#182;liittym&#195;&#164; ei oikein</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * tykk&#195;&#164;&#195;&#164; tuloksena saatavista eksoottisemmista merkeist&#195;&#164;, mutta esimerkiksi</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * numeerisia avaimia k&#195;&#164;ytt&#195;&#164;en toimintaa voi testata my&#195;&#182;s konsolissa. Todellinen</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * potentiaali saavutetaan kuitenkin vasta graafisen k&#195;&#164;ytt&#195;&#182;liittym&#195;&#164;n my&#195;&#182;t&#195;&#164;.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author vapsolon</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_17'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class PrivateKey {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Symmetrisen avaimen k&#195;&#164;&#195;&#164;nn&#195;&#182;sfunktio. Ottaa vastaan salattavan viestin ja</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * k&#195;&#164;ytt&#195;&#164;j&#195;&#164;n itsens&#195;&#164; m&#195;&#164;&#195;&#164;rittelem&#195;&#164;n avaimen ja salaa sitten viestin avainta</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * k&#195;&#164;ytt&#195;&#164;en. Salauksen pohjalla on yksinkertainen merkkikohtainen XOR.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param message Salattava viesti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param key Salauksessa k&#195;&#164;ytett&#195;&#164;v&#195;&#164; avain</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Salattu viesti</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String translate(String message, String key){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_28'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        ResultBuilder result = new ResultBuilder();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_29'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        CharArray ca = new CharArray();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_30'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int keyPos = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_31'/>
+31
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_31'>3</a>
+<span>
+
+1. translate : changed conditional boundary &rarr; KILLED<br/>
+
+2. translate : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. translate : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for(char c: ca.convert(message)){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_32'>1</a>
+<span>
+
+1. translate : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if(keyPos == key.length()){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_33'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                keyPos = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_35'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int cval = (int)c;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_36'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int mask = (int)key.charAt(keyPos);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_37'>2</a>
+<span>
+
+1. translate : Replaced XOR with AND &rarr; KILLED<br/>
+
+2. translate : removed call to labra/tira/salailija/Utils/ResultBuilder::append &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            result.append((char)(cval ^ mask));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_38'>1</a>
+<span>
+
+1. translate : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            keyPos++;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_39'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_40'>1</a>
+<span>
+
+1. translate : mutated return of Object value for labra/tira/salailija/Ciphers/PrivateKey::translate to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result.toString();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@751ae8a4_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_43'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@751ae8a4_31'>31</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_31'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@751ae8a4_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testNoCycle(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@751ae8a4_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> Replaced XOR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> removed call to labra/tira/salailija/Utils/ResultBuilder::append &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@751ae8a4_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@751ae8a4_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@751ae8a4_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>translate<br/><b>Killed by : </b>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey)</span></span> mutated return of Object value for labra/tira/salailija/Ciphers/PrivateKey::translate to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>labra.tira.salailija.Ciphers.TestPrivateKey.testLongKey(labra.tira.salailija.Ciphers.TestPrivateKey) (0 ms)</li><li>labra.tira.salailija.Ciphers.TestPrivateKey.testLongNonNumericalKey(labra.tira.salailija.Ciphers.TestPrivateKey) (0 ms)</li><li>labra.tira.salailija.Ciphers.TestPrivateKey.testNoCycle(labra.tira.salailija.Ciphers.TestPrivateKey) (1 ms)</li><li>labra.tira.salailija.Ciphers.TestPrivateKey.testLongString(labra.tira.salailija.Ciphers.TestPrivateKey) (0 ms)</li><li>labra.tira.salailija.Ciphers.TestPrivateKey.testSimpleKey(labra.tira.salailija.Ciphers.TestPrivateKey) (1 ms)</li><li>labra.tira.salailija.Ciphers.TestPrivateKey.testNonNumericalKey(labra.tira.salailija.Ciphers.TestPrivateKey) (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>
