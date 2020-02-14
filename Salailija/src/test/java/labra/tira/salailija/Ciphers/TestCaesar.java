@@ -1,9 +1,7 @@
 package labra.tira.salailija.Ciphers;
 
-import javafx.application.Application;
 import labra.tira.salailija.UI.GraphicalInterface;
 import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.BeforeClass;
 
 import org.junit.Test;

@@ -62,11 +62,11 @@ public class ResultBuilder {
     
     @Override
     public String toString(){
-        String result = "";
+        char[] temp = new char[added];
         for(int i=0;i<added;i++){
-            result += chars[i];
+            temp[i] = chars[i];
         }
-        return result;
+        return new String(temp);
     }
     
     /**

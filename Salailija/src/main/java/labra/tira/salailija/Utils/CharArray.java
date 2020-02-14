@@ -25,4 +25,19 @@ public class CharArray {
         return result;
     }
     
+    /**
+     * Muuntaa annetun merkkijonon tavulistaksi. <br>
+     * Sama periaate kuin merkkilistallakin, mutta muuntaa suoraan tavuiksi
+     * tukemaan privkeyn uutta muotoa tiedostosalaajana.
+     * @param s Pilkottava merkkijono
+     * @return Pilkottu tavulista
+     */
+    public byte[] byteArray(String s){
+        byte[] result = new byte[s.length()];
+        for(int i=0;i<s.length();i++){
+            result[i] = (byte)s.charAt(i);
+        }
+        return result;
+    }
+    
 }

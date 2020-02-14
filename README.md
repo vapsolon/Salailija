@@ -10,6 +10,8 @@ Tiralabra 2020 P3 Harjoitustyö
 
 [Viikko 4](https://github.com/vapsolon/Salailija/blob/master/docut/Viikkoraportti_4.md)
 
+[Viikko 5](https://github.com/vapsolon/Salailija/blob/master/docut/Viikkoraportti_5.md)
+
 ### Dokumentit
 [Määrittelydokumentti](https://github.com/vapsolon/Salailija/blob/master/docut/M%C3%A4%C3%A4rittelydokumentti.md)
 
@@ -29,9 +31,13 @@ Tiralabra 2020 P3 Harjoitustyö
 
 [Viikko 4](https://vapsolon.github.io/Salailija/docut/maven-raportit/checkstyle/viikko-4/checkstyle.html)
 
+[Viikko 5](https://vapsolon.github.io/Salailija/docut/maven-raportit/checkstyle/viikko-5/checkstyle.html)
+
 ##### PIT
 [Viikko 2](https://vapsolon.github.io/Salailija/docut/maven-raportit/pit/viikko-2/index.html)
 
 [Viikko 3](https://vapsolon.github.io/Salailija/docut/maven-raportit/pit/viikko-3/index.html)
 
 [Viikko 4](https://vapsolon.github.io/Salailija/docut/maven-raportit/pit/viikko-4/index.html)
+
+[Viikko 5](https://vapsolon.github.io/Salailija/docut/maven-raportit/pit/viikko-5/index.html)

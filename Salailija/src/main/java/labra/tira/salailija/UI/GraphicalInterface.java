@@ -1,5 +1,12 @@
 package labra.tira.salailija.UI;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,13 +16,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import labra.tira.salailija.Ciphers.Caesar;
 import labra.tira.salailija.Ciphers.ColumnarTransposition;
@@ -23,6 +34,7 @@ import labra.tira.salailija.Ciphers.Leet;
 import labra.tira.salailija.Ciphers.Morse;
 import labra.tira.salailija.Ciphers.PrivateKey;
 import labra.tira.salailija.Utils.InputChecker;
+import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
  * Kauan odotettu graafinen käyttöliittymä. <br>
@@ -51,6 +63,13 @@ public class GraphicalInterface extends Application {
     private int errorState = 0;
     //Vermistetaan myös että luokka on tietoinen jos sitä testataan
     private boolean testing = false;
+    //Tuodaan salattavan tiedoston luettu sisältö myös globaaliksi
+    private byte[] fileContents;
+    //Pidetään myös avatun tiedoston osoite tallessa
+    private Path filePath;
+    //Tallennetaan viimeisin käyty kansio jotta se voidaan avata uudestaan
+    //seuraavaa tiedostoa valittaessa
+    private Path lastVisited;
     
     /**
      * Tyhjä konstruktori normaalikäyttöön.
@@ -92,8 +111,10 @@ public class GraphicalInterface extends Application {
         HBox controlBox = new HBox(10);
         controlBox.setAlignment(Pos.CENTER);
         controlBox.setPadding(new Insets(20, 0, 0, 0));
+        //Luodaan privkeyn käyttämä etiketti-nappi -kombinaation alusta
+        HBox fileInputBox = new HBox(10);
         
-        //Ladotaan inputBox täyteen komponentteja
+        //Luodaan kaikki tarvittavat etiketit kerralla
         Label inputLabel = new Label("Salattava syöte");
         inputLabel.setStyle("-fx-font-size: 16;");
         Label outputLabel = new Label("Salattu tulos");
@@ -103,21 +124,34 @@ public class GraphicalInterface extends Application {
         keyLabel.setStyle("-fx-font-size: 16;");
         Label rotationLabel = new Label("Salauksessa käytettävä rotaatio");
         rotationLabel.setStyle("-fx-font-size: 16;");
+        Label fileLabel = new Label("Salattava tiedosto");
+        fileLabel.setStyle("-fx-font-size: 16;");
         
+        //Luodaan tiedostovalitsin
+        FileChooser inFile = new FileChooser();
+        inFile.setTitle("Salattava Tiedosto");
+        
+        //Luodaan syöte- ja tulostekomponentit
         TextArea input = new TextArea("");
+        input.setWrapText(true);
         TextArea output = new TextArea("");
+        output.setWrapText(true);
         output.setEditable(false);
         TextField key = new TextField("");
         key.setVisible(false);
         TextField rotation = new TextField("");
         
+        //Luodaan napit
         Button cipher = new Button("Salaa");
         cipher.setStyle("-fx-font-size: 16;");
         //Anna napeista pienemmän skaalautua suuremman varaamaan kokoon
         cipher.setMaxWidth(Double.MAX_VALUE);
         Button swap = new Button("<- Vaihda");
         swap.setStyle("-fx-font-size: 16;");
+        Button selectFile = new Button("Valitse");
+        selectFile.setStyle("-fx-font-size: 16;");
         
+        //Luodaan globaalisti näkyvä virheilmoitin
         this.error = new Label("");
         this.error.setAlignment(Pos.CENTER);
         this.error.setTextAlignment(TextAlignment.CENTER);
@@ -126,7 +160,14 @@ public class GraphicalInterface extends Application {
         this.error.setMaxHeight(Double.MAX_VALUE);
         this.error.setVisible(false);
         
+        //Alustetaan privkeyn lisäsyötelaatikko
+        fileInputBox.getChildren().add(fileLabel);
+        fileInputBox.getChildren().add(selectFile);
+        fileInputBox.setVisible(false);
+        
+        //Lisätään tarvittavat komponentit varsinaiseen syötepohjaan
         inputBox.add(inputLabel, 0, 0);
+        inputBox.add(fileInputBox, 0, 0);
         inputBox.add(input, 0, 1);
         inputBox.add(outputLabel, 2, 0);
         inputBox.add(output, 2, 1);
@@ -138,7 +179,7 @@ public class GraphicalInterface extends Application {
         inputBox.add(cipher, 1, 5);
         inputBox.add(error, 0, 4, 1, 2);
         
-        //Ladotaan controlBox täyteen komponentteja
+        //Luodaan radionapit salausmenetelmän vaihtamiseen
         RadioButton caesarb = new RadioButton("Caesarian Cipher");
         RadioButton rot13b = new RadioButton("ROT13");
         RadioButton leetb = new RadioButton("1337");
@@ -146,6 +187,7 @@ public class GraphicalInterface extends Application {
         RadioButton ctb = new RadioButton("Columnar Transposition");
         RadioButton privkeyb = new RadioButton("Private Key");
         
+        //Luodaan napeille ryhmä ja lisätään ne siihen
         ToggleGroup control = new ToggleGroup();
         caesarb.setToggleGroup(control);
         caesarb.setSelected(true);
@@ -155,6 +197,7 @@ public class GraphicalInterface extends Application {
         ctb.setToggleGroup(control);
         privkeyb.setToggleGroup(control);
         
+        //Ladotaan napit asettelupohjaansa
         controlBox.getChildren().add(caesarb);
         controlBox.getChildren().add(rot13b);
         controlBox.getChildren().add(leetb);
@@ -167,6 +210,7 @@ public class GraphicalInterface extends Application {
         base.setBottom(controlBox);
         
         //Luodaan tapahtumakäsittelijät
+        //Kontrollin vaihto radionapeilla
         EventHandler controlHandler = new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e) {
@@ -175,6 +219,10 @@ public class GraphicalInterface extends Application {
                     key.setVisible(false);
                     rotationLabel.setVisible(true);
                     rotation.setVisible(true);
+                    inputLabel.setVisible(true);
+                    fileInputBox.setVisible(false);
+                    swap.setVisible(true);
+                    input.setEditable(true);
                 }
                 else if(e.getSource() == leetb
                         || e.getSource() == morseb
@@ -183,16 +231,35 @@ public class GraphicalInterface extends Application {
                     rotation.setVisible(false);
                     keyLabel.setVisible(false);
                     key.setVisible(false);
+                    inputLabel.setVisible(true);
+                    fileInputBox.setVisible(false);
+                    swap.setVisible(true);
+                    input.setEditable(true);
+                }
+                else if(e.getSource() == privkeyb){
+                    rotationLabel.setVisible(false);
+                    rotation.setVisible(false);
+                    keyLabel.setVisible(true);
+                    key.setVisible(true);
+                    inputLabel.setVisible(false);
+                    fileInputBox.setVisible(true);
+                    swap.setVisible(false);
+                    input.setEditable(false);
                 }
                 else{
                     rotationLabel.setVisible(false);
                     rotation.setVisible(false);
                     keyLabel.setVisible(true);
                     key.setVisible(true);
+                    inputLabel.setVisible(true);
+                    fileInputBox.setVisible(false);
+                    swap.setVisible(true);
+                    input.setEditable(true);
                 }
             }
         };
         
+        //Salausnapin käsittelijä
         EventHandler buttonHandler = new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e) {
@@ -227,12 +294,43 @@ public class GraphicalInterface extends Application {
                             key.getText()));
                 }
                 else if(control.getSelectedToggle() == privkeyb){
-                    output.setText(pk.translate(input.getText(),
-                            key.getText()));
+                    if(fileContents == null){
+                        error("Ei salattavaa tiedostoa");
+                    }
+                    else if(key.getText().length() == 0){
+                        error("Ei salauksessa käytettävää avainta");
+                    }
+                    else{
+                        byte[] encryptedData = pk.encrypt(fileContents,
+                                key.getText());
+                        
+                        ResultBuilder rb = new ResultBuilder();
+                        for(byte b: encryptedData){
+                            rb.appendString(String.format("%02x", b));
+                        }
+                        output.setText(rb.toString());
+                        
+                        Path outPath = filePath.resolveSibling(
+                                filePath.getFileName() + ".salattu");
+                        if(filePath.toString().endsWith(".salattu")){
+                            String strPath = filePath.toString();
+                            outPath = Paths.get(strPath.substring(
+                                    0, strPath.lastIndexOf('.')));
+                        }
+                        try (OutputStream out = new BufferedOutputStream(
+                            Files.newOutputStream(outPath))){
+                                out.write(
+                                        encryptedData, 0, encryptedData.length);
+                        } catch (IOException ex) {
+                            error("IOException, varsinainen virhe konsolissa");
+                            System.out.println(ex);
+                        }
+                    }
                 }
             }
         };
         
+        //Vaihtonapin käsittelijä
         EventHandler switchHandler = new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent e) {
@@ -241,6 +339,34 @@ public class GraphicalInterface extends Application {
             }
         };
         
+        //Tiedostovalitsinnapin käsittelijä
+        EventHandler fileInputHandler = new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                try {
+                    if(lastVisited != null){
+                        inFile.setInitialDirectory(lastVisited.toFile());
+                    }
+                    File in = inFile.showOpenDialog(window);
+                    if(in != null){
+                        filePath = in.toPath();
+                        lastVisited = filePath.getParent();
+                        fileContents = Files.readAllBytes(filePath);
+                        ResultBuilder rb = new ResultBuilder();
+                        for(byte b: fileContents){
+                            rb.appendString(String.format("%02x", b));
+                        }
+                        input.setText(rb.toString());
+                    }
+                    
+                } catch (IOException ex) {
+                    error("IOException, varsinainen virhe konsolissa");
+                    System.out.println(ex);
+                }
+            }
+        };
+        
+        //Asetetaan radionapeille käsittelijät
         caesarb.setOnAction(controlHandler);
         rot13b.setOnAction(controlHandler);
         leetb.setOnAction(controlHandler);
@@ -248,11 +374,26 @@ public class GraphicalInterface extends Application {
         ctb.setOnAction(controlHandler);
         privkeyb.setOnAction(controlHandler);
         
+        //Asetetaan varsinaisille napeille käsittelijät
         cipher.setOnAction(buttonHandler);
         swap.setOnAction(switchHandler);
+        selectFile.setOnAction(fileInputHandler);
         
-        Scene view = new Scene(base);
+        //Lisätään asetelma omalle sivulleen
+        TabPane tp = new TabPane();
+        Tab cipherTab = new Tab();
+        cipherTab.setText("Salaus");
+        cipherTab.setContent(base);
+        tp.getTabs().add(cipherTab);
+        
+        //Luodaan vielä varsinainen skene ja asetetaan se ikkunan näkymäksi
+        Scene view = new Scene(tp);
         window.setScene(view);
+        
+        //Lisätään vielä kuvake
+        window.getIcons().add(new Image("file:src/main/resources/icon.png"));
+        
+        //Vihdoin valmis näytettäväksi
         window.show();
     }
     
