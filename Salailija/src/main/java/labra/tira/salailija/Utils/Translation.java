@@ -3,9 +3,8 @@ package labra.tira.salailija.Utils;
 /**
  * Käännösdatatyyppi käytettäväksi HashMapin tilalle luoduissa 
  * sanakirjaluokissa. <br>
- * Ei sisällä settereitä sillä käännöksiä ei ole koskaan tarve muuttaa, ne
- * luodaan kertaalleen sanakirjaolion luonnin yhteydessä ja ne pysyvät
- * muuttumattomina olion eliniän ajan.
+ * Käännökselle on setteri sillä sitä joudutaan muuttamaan frekvenssianalyysin
+ * aikana, alkuperäisen merkin arvo ei muutu koskaan.
  * @author vapsolon
  */
 

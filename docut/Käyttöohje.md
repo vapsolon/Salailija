@@ -21,3 +21,8 @@
 * **Private Key**
     * Syöte on tiedosto joka valitaan ohjelman yläosaan ilmestyvällä napilla. Mikä tahansa tiedosto kelpaa, tosin tyypilliset käyttäjäoikeusrajoitteet pätevät ja salatun tiedoston kirjoittaminen levylle saattaa estyä jos käyttäjällä ei ole tarvittavia oikeuksia kyseiseen kansioon
     * Tuloste on salattu tulos. Varsinainen tuloste on vain muodon vuoksi, ohjelma luo lisäksi salatun tiedoston syötetiedoston kansioon nimellä **<alkuperäinen tiedosto>.salattu**. Salauksen purku onnistuu valitsemalla tämä **.salattu**-tiedosto ja salaamalla se uudestaan samalla avaimella. **HUOM: .salattu-päätteisen tiedoston salaaminen kirjoittaa tuloksen alkuperäiseen tiedostoon, eli siis ilman .salattu-päätettä. Ota kopioita ennen kuin salaat mitään kovin tärkeää**
+    
+### Frekvenssianalyysi
+
+* Syöte voi olla mitä tahansa eikä testaamisessa ole tullut vastaan mitään kiellettyjä merkkejä. Pohjimmillaan tarkoitus on antaa syötteenä esimerkiksi Caesar-salauksen antamia salattuja tuloksia, mutta mikä tahansa lähde kelpaa.
+* Tuloste on lista syötteessä esiintyneistä merkeistä järjestettynä niiden esiintymismäärän perusteella suurimmasta pienimpään.

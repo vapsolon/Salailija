@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -33,6 +34,7 @@ import labra.tira.salailija.Ciphers.ColumnarTransposition;
 import labra.tira.salailija.Ciphers.Leet;
 import labra.tira.salailija.Ciphers.Morse;
 import labra.tira.salailija.Ciphers.PrivateKey;
+import labra.tira.salailija.Utils.FrequencyAnalysis;
 import labra.tira.salailija.Utils.InputChecker;
 import labra.tira.salailija.Utils.ResultBuilder;
 
@@ -99,6 +101,42 @@ public class GraphicalInterface extends Application {
     @Override
     public final void start(Stage window){
         window.setTitle("Salailija");
+        
+        //Luodaan ensin analyysisivu
+        //Luodaan pohja-asettelu
+        BorderPane aBase = new BorderPane();
+        aBase.setPadding(new Insets(10, 10, 10, 10));
+        //Luodaan keskelle syötteen ja tulosteen sisältävä asettelu
+        GridPane aInput = new GridPane();
+        aInput.setHgap(10);
+        aInput.setVgap(10);
+        
+        //Luodaan etiketit
+        Label aInputLabel = new Label("Analysoitava syöte");
+        aInputLabel.setStyle("-fx-font-size: 16;");
+        Label aOutputLabel = new Label("Analyysin tulos");
+        aOutputLabel.setStyle("-fx-font-size: 16;");
+        
+        //Luodaan syöte- ja tulostekentät
+        TextArea aInputArea = new TextArea("");
+        aInputArea.setWrapText(true);
+        TextArea aOutputArea = new TextArea("");
+        aOutputArea.setWrapText(true);
+        aOutputArea.setEditable(false);
+        
+        
+        //Luodaan napit
+        Button analyze = new Button("Frekvenssianalyysi");
+        analyze.setStyle("-fx-font-size: 16;");
+        
+        //Asetellaan komponentit
+        aInput.add(aInputLabel, 0, 0);
+        aInput.add(aInputArea, 0, 1);
+        aInput.add(aOutputLabel, 2, 0);
+        aInput.add(aOutputArea, 2, 1);
+        aInput.add(analyze, 1, 2);
+        
+        aBase.setCenter(aInput);
         
         //Luodaan pohja-asettelu
         BorderPane base = new BorderPane();
@@ -321,7 +359,7 @@ public class GraphicalInterface extends Application {
                             Files.newOutputStream(outPath))){
                                 out.write(
                                         encryptedData, 0, encryptedData.length);
-                        } catch (IOException ex) {
+                        }catch(IOException ex){
                             error("IOException, varsinainen virhe konsolissa");
                             System.out.println(ex);
                         }
@@ -359,10 +397,20 @@ public class GraphicalInterface extends Application {
                         input.setText(rb.toString());
                     }
                     
-                } catch (IOException ex) {
+                }catch(IOException ex){
                     error("IOException, varsinainen virhe konsolissa");
                     System.out.println(ex);
                 }
+            }
+        };
+        
+        //Frekvenssianalyysinapin käsittelijä
+        EventHandler frequencyHandler = new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                FrequencyAnalysis fa = new FrequencyAnalysis();
+                String result = fa.analyze(aInputArea.getText());
+                aOutputArea.setText(result);
             }
         };
         
@@ -378,20 +426,26 @@ public class GraphicalInterface extends Application {
         cipher.setOnAction(buttonHandler);
         swap.setOnAction(switchHandler);
         selectFile.setOnAction(fileInputHandler);
+        analyze.setOnAction(frequencyHandler);
         
         //Lisätään asetelma omalle sivulleen
         TabPane tp = new TabPane();
+        tp.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
         Tab cipherTab = new Tab();
         cipherTab.setText("Salaus");
         cipherTab.setContent(base);
         tp.getTabs().add(cipherTab);
+        Tab analysisTab = new Tab();
+        analysisTab.setText("Analyysi");
+        analysisTab.setContent(aBase);
+        tp.getTabs().add(analysisTab);
         
         //Luodaan vielä varsinainen skene ja asetetaan se ikkunan näkymäksi
         Scene view = new Scene(tp);
         window.setScene(view);
         
         //Lisätään vielä kuvake
-        window.getIcons().add(new Image("file:src/main/resources/icon.png"));
+        window.getIcons().add(new Image("/icon.png"));
         
         //Vihdoin valmis näytettäväksi
         window.show();

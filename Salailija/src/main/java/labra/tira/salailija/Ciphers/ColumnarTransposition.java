@@ -1,15 +1,15 @@
 
 package labra.tira.salailija.Ciphers;
 
-import labra.tira.salailija.Utils.Quicksort;
+import labra.tira.salailija.Utils.CharArraySort;
 import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
  * Hyvin rajoitettu Columnar Transposition -toteutus. Ottaa käyttäjältä vastaan
  * ensin salattavan viestin ja sitten salauksen avaimen jonka perusteella 
  * sarakkeiden uusi järjestys määritetään. <br>
- * Järjestyksen määrittämiseen käytetään yksinkertaisesti avaimen sisäistä
- * aakkosjärjestystä, itse järjestämisestä huolehtii Quicksort-luokka
+ Järjestyksen määrittämiseen käytetään yksinkertaisesti avaimen sisäistä
+ aakkosjärjestystä, itse järjestämisestä huolehtii CharArraySort-luokka
  * @author vapsolon
  */
 
@@ -18,8 +18,8 @@ public class ColumnarTransposition {
     /**
      * Kääntää viestin saraketranspositiota käyttäen annetun avaimen perusteella
      * <br>
-     * Avaimena toimii mikä tahansa merkkijono jonka Quicksort voi vain 
-     * järjestää. Tämän merkkijonon kirjaimet järjestetään aakkosjärjestykseen,
+ Avaimena toimii mikä tahansa merkkijono jonka CharArraySort voi vain 
+ järjestää. Tämän merkkijonon kirjaimet järjestetään aakkosjärjestykseen,
      * mutta niiden alkuperäisistä sijainneista merkkijonossa pidetään kirjaa
      * ja niiden avulla luodaan viestin sarakkeille uusi järjestys. <br>
      * Itse viesti pilkotaan vakiomittaisiin riveihin avaimen pituuden
@@ -32,7 +32,7 @@ public class ColumnarTransposition {
     public String translate(String message, String key){
         key = key.replaceAll("\\s+","");
         //Luodaan avaimelle järjestäjä
-        Quicksort q = new Quicksort();
+        CharArraySort q = new CharArraySort();
         //Haetaan avaimen kirjainten aakkosjärjestys kolumnien järjestykseksi
         int[] columns = q.start(key);
         

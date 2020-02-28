@@ -12,15 +12,12 @@ import labra.tira.salailija.Utils.ResultBuilder;
  * @author vapsolon
  */
 
-//TODO: ääkköset, numerot, mahdollisesti jopa erikoismerkit (!?)
-
-
 public class Caesar {
 
-    private int base = 97; //Pienten kirjainten a
-    private int top = 122; //Pienten kirjainten z
-    private int bigbase = 65; //Isojen kirjainten A
-    private int bigtop = 90; //Isojen kirjainten Z
+    private final int base = 97; //Pienten kirjainten a
+    private final int top = 122; //Pienten kirjainten z
+    private final int bigbase = 65; //Isojen kirjainten A
+    private final int bigtop = 90; //Isojen kirjainten Z
     private GraphicalInterface g;
 
     /**

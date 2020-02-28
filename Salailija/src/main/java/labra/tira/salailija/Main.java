@@ -19,6 +19,8 @@ public class Main {
         //TextInterface t = new TextInterface();
         Application.launch(GraphicalInterface.class,
                 "--testing=no");
+        //TestPerformance tp = new TestPerformance();
+        //tp.test();
         //t.run();
     }
     
