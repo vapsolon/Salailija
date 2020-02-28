@@ -17,6 +17,10 @@ Tiralabra 2020 P3 Harjoitustyö
 ### Dokumentit
 [Määrittelydokumentti](https://github.com/vapsolon/Salailija/blob/master/docut/M%C3%A4%C3%A4rittelydokumentti.md)
 
+[Toteutusdokumentti](https://github.com/vapsolon/Salailija/blob/master/docut/Toteutusdokumentti.md)
+
+[Testausdokumentti](https://github.com/vapsolon/Salailija/blob/master/docut/Testausdokumentti.md)
+
 [Käyttöohje](https://github.com/vapsolon/Salailija/blob/master/docut/Käyttöohje.md)
 
 ### Javadocs
