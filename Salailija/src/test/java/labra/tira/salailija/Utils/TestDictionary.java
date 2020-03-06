@@ -1,8 +1,6 @@
 package labra.tira.salailija.Utils;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 public class TestDictionary {
@@ -27,14 +25,14 @@ public class TestDictionary {
         Dictionary d = new Dictionary();
         char test = 'a';
         d.add(test, "b");
-        assertTrue("Returned false when asking if dictionary contains character " + test + " which was previously added", d.contains(test));
+        assertEquals("Returned false when asking if dictionary contains character " + test + " which was previously added", 0, d.contains(test));
     }
     
     @Test
     public void emptyContains(){
         Dictionary d = new Dictionary();
         char test = 'a';
-        assertFalse("Returned true when asking if dictionary contains character " + test + " which was not added at all", d.contains(test));
+        assertEquals("Returned true when asking if dictionary contains character " + test + " which was not added at all", -1, d.contains(test));
     }
     
 }

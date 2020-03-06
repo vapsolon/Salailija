@@ -8,7 +8,7 @@ package labra.tira.salailija.Utils;
  */
 public class FrequencyPair {
     
-    private char character;
+    private final char character;
     private int count;
     
     /**

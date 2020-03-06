@@ -74,13 +74,14 @@ public class MorseDict {
         //Sanakirjassa on vain pieniä kirjaimia tilan säästämiseksi, muunnetaan
         //siis käännettäväkin kirjain pieneksi
         char lower = Character.toLowerCase(c);
-        //Varmistetaan että kirjaimelle on käännös ja käännetään se
-        if(this.morse.contains(lower)){
-            return this.morse.get(lower);
+        String translation = this.morse.get(lower);
+        //Jos käännöstä ei ole, palautetaan alkuperäinen merkki
+        if(translation == null){
+            return Character.toString(c);
         }
-        //Jos käännöstä ei löydy, palautetaan kirjain sellaisenaan lisättäväksi
-        //tulokseen
-        return Character.toString(c);
+        else{
+            return translation;
+        }
     }
     
 }

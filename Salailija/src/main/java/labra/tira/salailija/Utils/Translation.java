@@ -3,15 +3,15 @@ package labra.tira.salailija.Utils;
 /**
  * Käännösdatatyyppi käytettäväksi HashMapin tilalle luoduissa 
  * sanakirjaluokissa. <br>
- * Käännökselle on setteri sillä sitä joudutaan muuttamaan frekvenssianalyysin
- * aikana, alkuperäisen merkin arvo ei muutu koskaan.
+ * Settereitä ei ole ollenkaan sillä käännöksillä ei ole syytä muuttua ajon
+ * aikana.
  * @author vapsolon
  */
 
 public class Translation {
     
-    private char character;
-    private String translation;
+    private final char character;
+    private final String translation;
     
     /**
      * Luokan konstruktori tallettaa luokan arvot.

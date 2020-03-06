@@ -40,6 +40,7 @@ public class CharArraySort {
         return columns;
     }
 
+    //Järjestyksen aloitus
     private void sort(int start, int end){
         if(start < end){
             int middle = split(start, end);
@@ -48,6 +49,7 @@ public class CharArraySort {
         }
     }
 
+    //Puolitusmetodi, käytännössä järjestys tapahtuu täällä
     private int split(int start, int end){
         int middle = start;
         for(int i=start+1;i<=end;i++){
@@ -65,6 +67,9 @@ public class CharArraySort {
         return middle;
     }
     
+    //Joskus identtisten merkkien järjestys ei mene pelkällä quicksortilla
+    //oikein vaan merkkijonossa myöhemmin esiintynyt merkki asetetaan aiemman
+    //merkin edelle. Oikaistaan nämä tilanteet vielä erillisellä tarkistuksella.
     private void identical(){
         for(int i=1;i<this.characters.length;i++){
             CharIndex current = this.characters[i];

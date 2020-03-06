@@ -1,7 +1,7 @@
 package labra.tira.salailija.Utils;
 
 /**
- * Sanakirjatoteutus, tällä kertaa muokattu merkki-lukumäärä -muotoiseksi.
+ * Sanakirjatoteutus, tällä kertaa muokattu merkki-lukumäärä -muotoiseksi. <br>
  * Kyseessä tosiaan siis Dictionary-luokan kopio sillä metodit ja tallennettava
  * data ovat tarpeeksi erilaisia jotta erillinen luokka oli tarpeen selkeyden
  * vuoksi. Tallettaa listan merkki-lukumäärä -pareja ja tarvittaessa palauttaa
@@ -11,8 +11,11 @@ package labra.tira.salailija.Utils;
 public class FrequencyMap {
     
     private FrequencyPair[] dictionary;
+    //Pidetään kirjaa listan seuraavasta avoimesta indeksistä
     private int openIndex;
+    //Pidetään kirjaa listan nykyisestä maksimikoosta
     private int size;
+    //Pidetään kirjaa listalle lisättyjen käännösten määrästä
     private int added;
     
     /**

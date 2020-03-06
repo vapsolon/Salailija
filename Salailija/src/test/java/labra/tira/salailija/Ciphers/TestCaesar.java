@@ -57,4 +57,10 @@ public class TestCaesar {
         assertEquals("Wrong translation for string " + test + " with ROT13", "12!?", c.cipher(test, 13));
     }
     
+    @Test
+    public void testMoreSpecialCharacters(){
+        String test = "Testäö";
+        assertEquals("Wrong translation for string " + test + " with ROT1", "Uftuäö", c.cipher(test, 1));
+    }
+    
 }

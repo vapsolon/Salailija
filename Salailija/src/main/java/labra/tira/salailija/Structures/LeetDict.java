@@ -44,15 +44,20 @@ public class LeetDict {
         //Sanakirjassa on helppouden vuoksi vain pieniä kirjaimia, muunnetaan
         //siis syötekin pieneksi
         char lower = Character.toLowerCase(c);
-        //Jos merkille löytyy käännös palautetaan se
-        if(this.leet.contains(lower)){
+        //Haetaan käännös muuttujaan, sanakirjaluokka hoitaa käännöksen ja 
+        //sen mahdollisen puuttumisen käsittelyn
+        String translation = this.leet.get(lower);
+        //Jos käännöstä ei ole, palautetaan alkuperäinen merkki
+        if(translation == null){
+            return c;
+        }
+        //Muuten palautetaan käännös
+        else{
             //Oman sanakirjaluokan toteutus vaatii Morsen takia käännösten
             //olevan merkkijonoja joten tänne tarvitaan ylimääräinen muunnos
             //takaisin merkiksi
             return this.leet.get(lower).charAt(0);
         }
-        //Muutoin palautetaan alkuperäinen merkki
-        return c;
     }
     
 }

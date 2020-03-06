@@ -5,8 +5,8 @@ import labra.tira.salailija.Utils.CharArray;
 import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
- * Morse-kääntäjä tekstille, rakennettu Morse-kirjainkääntäjän
- * ja -sanakirjan päälle.
+ * Morse-kääntäjä tekstille, rakennettu Morse-kirjainkääntäjän ja -sanakirjan
+ * päälle.
  * @author vapsolon
  */
 

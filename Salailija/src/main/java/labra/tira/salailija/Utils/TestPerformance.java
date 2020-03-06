@@ -23,7 +23,7 @@ public class TestPerformance {
     Leet l = new Leet();
     Morse m = new Morse();
     PrivateKey pk = new PrivateKey();
-    Random r = new Random(10);
+    Random r = new Random(1337);
     
     String testString10;
     String testString100;
@@ -40,10 +40,15 @@ public class TestPerformance {
     public void test(){
         setup();
         testCaesar();
+        System.out.println("");
         testLeet();
+        System.out.println("");
         testMorse();
+        System.out.println("");
         testCt();
+        System.out.println("");
         testPrivateKey();
+        System.out.println("");
     }
     
     /**

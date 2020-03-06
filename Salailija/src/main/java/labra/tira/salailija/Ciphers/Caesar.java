@@ -6,7 +6,7 @@ import labra.tira.salailija.Utils.ResultBuilder;
 /**
  * Caesarian Shift -toteutus, tällä hetkellä vielä amerikkalaistyylinen eli
  * suurin mahdollinen shift on 26. <br>
- * Ääkkösiä ei tueta ja ne tullaan käsittelemään erikoistapauksina myöhemmin
+ * Ääkkösiä tai muita "erikoismerkkejä" ei tueta
  * <br><br>
  * Toimii myös ROT13-toteutuksena vakiosiirtymällä 13
  * @author vapsolon

@@ -35,7 +35,16 @@ Sisältää kaksi välikappaletta jotka kommunikoivat sanakirjasalausten ja vars
 Sanakirjat Leet- ja Morse-salauksille. Tallentavat ensin kovakoodatun listan aakkosia ja niiden käännöksiä vielä erikseen toteutettuun sanakirjaluokkaan ja tarjoavat sitten mahdollisuuden kääntää annetun merkin jos se löytyy tuetusta aakkostosta.
 
 ### UI
-Sisältää ohjelman käyttöliittymän. Tällä hetkellä **TextInterface** roikkuu vielä mukana mutta **GraphicalInterface** on ollut hyvässä kunnossa jo viikkoja joten lopullisesta palautuksesta tekstipohjainen käyttöliittymä katoaa, eikä sitä sen tarkemmin mainita tässäkään dokumentissa.
+Sisältää ohjelman käyttöliittymän.
 
 ##### GraphicalInterface
 Hieman mittavaksi kasvanut graafinen käyttöliittymä. Tarjoaa mahdollisuuden salata tekstiä tai tiedostoja tuetuilla salausmenetelmillä ja myös suorittaa frekvenssianalyysin. itse toteutuksessa ei ole juuri mitään erikoista, ainoastaan pitkä liuta komponenttien luomista ja asettelua, joskus muutama tapahtumakäsittelijä, joten jätetään tarkempi analyysi tekemättä.
+
+### Utils
+Sisältää loput yleishyödylliset apuluokat ja kaiken mitä ei suoraan voitu laittaa itse salausmenetelmäluokkiin. Selitetään tässä ainoastaan tärkeimmät, muissa javadocsit kertovat tarpeeksi.
+
+##### Quicksort ja CharArraySort
+Quicksortissa on tavallinen Quicksort-toteutus, ei mitään kovin erikoista. CharArraySort on täysin sama toiminnallisuus mutta sitä on jouduttu erikoistuttamaan jotta varsinainen toiminnallisuus merkkijonon kolumnien listaamisesta merkkijonon merkkien aakkosjärjestyksen perusteella saadaan toteutettua.
+
+##### TestPerformance
+Suorituskykytestausluokka. Selitetty hieman tarkemmin testausdokumentissa, mutta luo tosiaan eri mittaisia testisyötteitä tunnetulla satunnaislukugeneraattorilla ja merkkijonongeneroimisfunktiolla ja salaa sitten nämä merkkijonot kaikilla tuetuilla salausmenetelmillä.

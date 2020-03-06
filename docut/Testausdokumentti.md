@@ -10,9 +10,7 @@ Salausmenetelmien testaamisessa on keskitytty pitkälti salatun tuloksen oikeell
 Tietorakenteiden ja apuluokkien testaamisessa on samoin keskitytty niiden tuottamien tulosten oikeellisuuteen. Salausmenetelmien testaus toimii joissain määrin niiden käyttämien apuluokkien testaamisena, sillä virhe apuluokassa aiheuttaa virheen myös salauksessa, mutta tämän sivuvaikutustestaamisen lisäksi joitain perustoiminnallisuuksia on testattu, varsinkin jos **PIT**-raporttien mukaan testikattavuus tai mutaatioeliminaatiot joidenkin luokkien kohdalla eivät ole olleet pelkkien sivuvaikutusten jälkeen tarpeeksi laajat.
 
 ### Suorituskykytestaus
-Suorituskykytestaus on toteutettu erilliseen **TestPerformance**-luokkaan **Utils**-pakettiin. Suorituskykytestejä ei normaalitilanteessa ajeta, ja tällä hetkellä niiden ajamiseksi **Main**-luokassa täytyy tehdä muutama muutos jotta käyttöliittymän sijaan ajetaankin testit.
-
-Tällä hetkellä ainoastaan salausmenetelmien suorituskykyä testataan, sillä täten koko ohjelman tehokkuudesta saadaan hyvä kuva. Apuluokkien kuten **Quicksort** testaaminen on harkinnan alla.
+Suorituskykytestaus on toteutettu erilliseen **TestPerformance**-luokkaan **Utils**-pakettiin. Testit voidaan ajaa antamalla ohjelmalle komentoriviargumenttina merkkijono "performance", eli siis ```java -jar Salailija.jar performance```
 
 Testisyöte on kaikille salausmenetelmille sama. Ennen testien ajamista testiluokka alustaa kuusi erimittaista merkkijonoa jotka luodaan tunnetulla satunnaislukugeneraattorilla, joten merkkijonot pysyvät samana ohjelman jokaisella ajokerralla. Merkkijonojen pituudet ovat 10, 100, 1000, 10000, 100000, 1000000. Jokainen salausmenetelmä ajetaan jokaisella merkkijonolla kaksi kertaa kuten testausohjeessa kehotettiin, mutta ensimmäisen ajon tulos pidetään mukana ainakin vielä kiinnostavana vertailukohteena.
 

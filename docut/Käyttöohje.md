@@ -1,5 +1,6 @@
 # Salailija - Käyttöohje
-.jar löytyy **build**-kansiosta ja sen pitäisi olla täysin ajokunnossa ja vastata viikon 4 palautusta. Käynnistys ei vaadi mitään erityistä ja ohjelman tulisi lähteä käyntiin tuosta vain. Käyttöliittymä on graafinen joten näiltä osin kaiken pitäisi olla jokseenkin selvää. Salausmenetelmän vaihto tapahtuu ikkunan pohjalla olevan radionappiryhmän avulla ja valitun napin vaihtuessa myös näkyvissä olevat syöte-elementit vaihtuvat kyseisen salauksen vaatimusten mukaan. Eri salausten vaatimat erikoisuudet on selitetty tarkemmin alla.
+
+Githubissa pitäisi olla release joka vastaa projektin lopullista palautusta. Käynnistys ei vaadi mitään erityistä ja ohjelman tulisi lähteä käyntiin tuosta vain. Linuxilla tosin OpenJDK-asennukset vaativat ilmeisesti myös OpenJFX-paketin jotta .jar lähtee käyntiin. Käyttöliittymä on graafinen joten näiltä osin kaiken pitäisi olla jokseenkin selvää. Salausmenetelmän vaihto tapahtuu ikkunan pohjalla olevan radionappiryhmän avulla ja valitun napin vaihtuessa myös näkyvissä olevat syöte-elementit vaihtuvat kyseisen salauksen vaatimusten mukaan. Eri salausten vaatimat erikoisuudet on selitetty tarkemmin alla.
 
 ### Salaukset
 
@@ -26,3 +27,7 @@
 
 * Syöte voi olla mitä tahansa eikä testaamisessa ole tullut vastaan mitään kiellettyjä merkkejä. Pohjimmillaan tarkoitus on antaa syötteenä esimerkiksi Caesar-salauksen antamia salattuja tuloksia, mutta mikä tahansa lähde kelpaa.
 * Tuloste on lista syötteessä esiintyneistä merkeistä järjestettynä niiden esiintymismäärän perusteella suurimmasta pienimpään.
+
+### Suorituskykytestaaminen
+
+* Suorituskykytestien ajamiseen on myös mahdollisuus. Testit voidaan ajaa antamalla ohjelmalle argumenttina merkkijono "performance", eli siis kutsumalla "java -jar Salailija.jar performance"

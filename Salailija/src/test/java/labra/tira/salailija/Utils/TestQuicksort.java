@@ -1,6 +1,5 @@
 package labra.tira.salailija.Utils;
 
-import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

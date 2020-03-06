@@ -9,7 +9,7 @@ package labra.tira.salailija.Utils;
 public class InputChecker {
     
     /**
-     * Tarkista onko annettu merkkijono numeerinen vai sisältääkö se
+     * Tarkistaa onko annettu merkkijono numeerinen vai sisältääkö se
      * mahdollisesti myös kirjainmerkkejä.
      * @param input Testattava merkkijono
      * @return true jos merkkijonossa oli ainoastaan numeroita, false muuten

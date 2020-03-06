@@ -39,15 +39,10 @@ import labra.tira.salailija.Utils.InputChecker;
 import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
- * Kauan odotettu graafinen käyttöliittymä. <br>
- * Tällä hetkellä kevyimmässä muodossaan, kuitenkin hyvin toiminnallinen ja 
- * jopa käyttövalmis. Syöte ja tuloste ovat omissa tekstialueissaan ja 
- * kontrollien avulla voi vaihtaa salausmenetelmää. Kontrollit myös näyttävät
- * ja piilottavat lisätietoja kyselevät kentät tarpeen mukaan. <br>
- * Laajenee varmaan vielä huomattavasti ainakin suunnitellun
- * purkamistoiminnallisuuden myötä, lisäksi tarkoitus on rajoittaa Private Key
- * puhtaasti tiedostosalaamismenetelmäksi joten näiltäkin osin laajenemista
- * tulossa.
+ * Ohjelman graafinen käyttöliittymä. <br>
+ * Kokonaisuudessaan hyvin raskas ja sekava luokka komponenttien ja niiden
+ * tapahtumakäsittelijöiden määrän takia, suurin osa koodia on tosin juuri
+ * geneeristä komponenttien luomista ja asettelua.
  * @author vapsolon
  */
 public class GraphicalInterface extends Application {

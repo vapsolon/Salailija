@@ -5,8 +5,8 @@ import labra.tira.salailija.Utils.CharArray;
 import labra.tira.salailija.Utils.ResultBuilder;
 
 /**
- * 1337-kääntäjä tekstille, rakennettu 1337-kirjainkääntäjän ja
- * -sanakirjan päälle.
+ * 1337-kääntäjä tekstille, rakennettu 1337-kirjainkääntäjän ja -sanakirjan 
+ * päälle.
  * @author vapsolon
  */
 

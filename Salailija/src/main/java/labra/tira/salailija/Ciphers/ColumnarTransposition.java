@@ -8,8 +8,8 @@ import labra.tira.salailija.Utils.ResultBuilder;
  * Hyvin rajoitettu Columnar Transposition -toteutus. Ottaa käyttäjältä vastaan
  * ensin salattavan viestin ja sitten salauksen avaimen jonka perusteella 
  * sarakkeiden uusi järjestys määritetään. <br>
- Järjestyksen määrittämiseen käytetään yksinkertaisesti avaimen sisäistä
- aakkosjärjestystä, itse järjestämisestä huolehtii CharArraySort-luokka
+ * Järjestyksen määrittämiseen käytetään yksinkertaisesti avaimen sisäistä
+ * aakkosjärjestystä, itse järjestämisestä huolehtii CharArraySort-luokka
  * @author vapsolon
  */
 
@@ -18,8 +18,8 @@ public class ColumnarTransposition {
     /**
      * Kääntää viestin saraketranspositiota käyttäen annetun avaimen perusteella
      * <br>
- Avaimena toimii mikä tahansa merkkijono jonka CharArraySort voi vain 
- järjestää. Tämän merkkijonon kirjaimet järjestetään aakkosjärjestykseen,
+     * Avaimena toimii mikä tahansa merkkijono jonka CharArraySort voi vain 
+     * järjestää. Tämän merkkijonon kirjaimet järjestetään aakkosjärjestykseen,
      * mutta niiden alkuperäisistä sijainneista merkkijonossa pidetään kirjaa
      * ja niiden avulla luodaan viestin sarakkeille uusi järjestys. <br>
      * Itse viesti pilkotaan vakiomittaisiin riveihin avaimen pituuden

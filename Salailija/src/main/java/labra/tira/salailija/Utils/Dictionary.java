@@ -14,9 +14,13 @@ package labra.tira.salailija.Utils;
 
 public class Dictionary {
     
+    //Varsinainen sanakirjalista
     private Translation[] dictionary;
+    //Pidetään kirjaa listan seuraavasta avoimesta indeksistä
     private int openIndex;
+    //Pidetään kirjaa listan nykyisestä maksimikoosta
     private int size;
+    //Pidetään kirjaa listalle lisättyjen käännösten määrästä
     private int added;
     
     /**
@@ -40,7 +44,7 @@ public class Dictionary {
      * @param translation Lisättävä käännös
      */
     public void add(char character, String translation){
-        if(!(contains(character))){
+        if(contains(character) == -1){
             if(this.openIndex == this.size){
                 grow();
             }
@@ -57,28 +61,30 @@ public class Dictionary {
      * @return Sanan käännös jos sana löytyy sanakirjasta, muuten null
      */
     public String get(char character){
-        for(int i=0;i<this.added;i++){
-            Translation t = this.dictionary[i];
-            if(character == t.getCharacter()){
-                return t.getTranslation();
-            }
+        int index = contains(character);
+        if(index == -1){
+            return null;
         }
-        return null;
+        else{
+            Translation t = this.dictionary[index];
+            return t.getTranslation();
+        }
     }
     
     /**
      * Tarkistetaan löytyykö sana sanakirjasta.
      * @param character Haettava sana
-     * @return true jos sana löytyy sanakirjasta, muuten false
+     * @return Indeksi josta sana ja sen käännös saadaan jos sana löytyi,
+     * -1 muuten
      */
-    public boolean contains(char character){
+    public int contains(char character){
         for(int i=0;i<this.added;i++){
             Translation c = this.dictionary[i];
             if(character == c.getCharacter()){
-                return true;
+                return i;
             }
         }
-        return false;
+        return -1;
     }
     
     /**

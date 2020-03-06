@@ -11,8 +11,8 @@ package labra.tira.salailija.Utils;
 
 public class CharIndex {
     
-    private char character;
-    private int index;
+    private final char character;
+    private final int index;
     
     /**
      * Konstruktori tallentaa olion datatyypit.
