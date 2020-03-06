@@ -35,6 +35,7 @@ Sisältää kaksi välikappaletta jotka kommunikoivat sanakirjasalausten ja vars
 Sanakirjat Leet- ja Morse-salauksille. Tallentavat ensin kovakoodatun listan aakkosia ja niiden käännöksiä vielä erikseen toteutettuun sanakirjaluokkaan ja tarjoavat sitten mahdollisuuden kääntää annetun merkin jos se löytyy tuetusta aakkostosta.
 
 ### UI
+
 Sisältää ohjelman käyttöliittymän.
 
 ##### GraphicalInterface
@@ -48,3 +49,8 @@ Quicksortissa on tavallinen Quicksort-toteutus, ei mitään kovin erikoista. Cha
 
 ##### TestPerformance
 Suorituskykytestausluokka. Selitetty hieman tarkemmin testausdokumentissa, mutta luo tosiaan eri mittaisia testisyötteitä tunnetulla satunnaislukugeneraattorilla ja merkkijonongeneroimisfunktiolla ja salaa sitten nämä merkkijonot kaikilla tuetuilla salausmenetelmillä.
+
+### Puutteet ja Parannettavat
+Ehdottomasti suurin parannettava piirre olisi aivan loppumetreillä huomattu ongelma **PrivateKey**-toteutuksessa, jossa nolladatan salaaminen kirjoittaa salattuun tiedostoon itse avaimen puhtaana tekstinä sillä (00000 XOR AVAIN => AVAIN), mikä on ymmärrettävän suuri tietoturvaongelma. Lopulliseen palautukseen tätä ei ehditty korjaamaan, mutta toivottavasti kukaan ei käytä labrakurssin salausohjelmaa minkään turhan kriittisen datan salaamiseen. Ongelman voisi kiertää salaamalla tai muuten sekoittamalla myös itse avaimen, jolloin sitä ei kirjoiteta sentään aivan suorassa muodossaan salattuun tiedostoon. Toinen lähestymistapa olisi muuntaa salattavan tiedoston nollatavut joksikin muuksi tavujonoksi joka tiedettäisiin sitten muuntaa takaisin nollaksi salausta purkaessa. Korjaaminen on yksi dediksen jälkeen suunnitteilla olevista päivityksistä jos vain muodon vuoksi ja kunhan vian aika ja innostus riittävät.
+
+Graafinen käyttöliittymä voisi myös skaalautua paremmin. Kaikki työ tehtiin pöytäkoneella ja mukavan suurella näytöllä, joten demoaminen 768p-näytölliseltä läppäriltä vei jo suurimman osan näyttötilaa. Ikkunaa alaspäin skaalatessa esimerkiksi nappitekstit katoavat koska napit pienenevät ensisijaisesti. Komponenttien ja niiden asettelujen skaalautumispolitiikkoja tulisi siis säätää hieman. Tämäkin kuitenkin vain pienenä epämukavuutena jäi varsinaisen palautuksen ulkopuolelle.
